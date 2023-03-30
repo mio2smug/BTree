@@ -146,11 +146,11 @@ class BinarySearchTree{
 }; 
 
 const bst = new BinarySearchTree();  //create new tree
-console.log("Is BST empty?", bst.isEmpty())  //is tree empty   //Working
-bst.insert(10)
-bst.insert(5)  
-bst.insert(15)   ///Working
-bst.insert(3)
+// console.log("Is BST empty?", bst.isEmpty())  //is tree empty   //Working
+// bst.insert(10)
+// bst.insert(5)  
+// bst.insert(15)   ///Working
+// bst.insert(3)
 // bst.insert(7)
 // console.log(bst.search(bst.root, 5))
 // console.log(bst.search(bst.root, 10))   //working
@@ -160,6 +160,31 @@ bst.insert(3)
 // bst.postorder(bst.root)   //working
 // bst.levelOrder();
 // console.log(bst.min(bst.root), bst.max(bst.root))
-bst.levelOrder();
-bst.deleteNode(bst.root, 3)
-bst.levelOrder();
+// bst.levelOrder();
+// bst.deleteNode(bst.root, 3)
+// bst.levelOrder();
+
+let myArr = [1, 7, 4, 23, 8, 9, 4, 3, 5, 7, 9, 67, 6345, 324]
+
+for (let element of myArr) {
+    bst.insert(element)    
+}
+
+const prettyPrint = (node, prefix = '', isLeft = true) => {
+  if (node === null) {
+     return;
+  }
+  if (node.right !== null) {
+    prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+  }
+  console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
+  if (node.left !== null) {
+    prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+  }
+}
+
+prettyPrint(bst.root)
+
+
+
+// bst.levelOrder();
