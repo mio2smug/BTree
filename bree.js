@@ -1,4 +1,4 @@
-class Node{
+class Node{   //Custom class node
     constructor(data){
         this.data = data
         this.right = null
@@ -6,7 +6,9 @@ class Node{
     };
 };
 
-class BinarySearchTree{
+class BinarySearchTree{     //Binary tree custom class
+    
+    
     constructor(){
       this.root = null      
     };
@@ -143,6 +145,8 @@ class BinarySearchTree{
         }
         return root;  
     };
+ 
+    
 }; 
 
 const bst = new BinarySearchTree();  //create new tree
@@ -188,3 +192,31 @@ prettyPrint(bst.root)
 
 
 // bst.levelOrder();
+/* Output:
+
+
+│               ┌── 6345
+VM261:180 │               │   └── 324
+VM261:180 │           ┌── 67
+VM261:180 │       ┌── 23
+VM261:180 │       │   │       ┌── 9
+VM261:180 │       │   │   ┌── 9
+VM261:180 │       │   └── 8
+VM261:180 │       │       └── 7
+VM261:180 │   ┌── 7
+VM261:180 │   │   │       ┌── 5
+VM261:180 │   │   │   ┌── 4
+VM261:180 │   │   └── 4
+VM261:180 │   │       └── 3
+VM261:180 └── 1
+
+
+
+
+
+
+
+
+
+
+*/
